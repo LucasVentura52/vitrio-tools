@@ -52,3 +52,12 @@ Importe LucasVentura52/vitrio-tools e mantenha a raiz do repositório como Root 
 Configure SITE_URL com a origem definitiva do site (https://seu-dominio.com, sem caminho) e execute um novo deploy. Essa variável ajusta canonical, dados estruturados, robots.txt e sitemap.xml; sem ela o domínio inicial do Sites é preservado.
 
 Após conectar o repositório à Vercel, os commits na branch de produção podem gerar deploys pela integração Git da Vercel. As futuras alterações devem preservar o histórico e partir do HEAD atual da branch.
+
+
+## Ferramentas adicionadas
+- Conversor de cores HEX, RGB e HSL com seletor e prévia.
+- Analisador de URL para protocolo, domínio, caminho e parâmetros.
+- Simulador de juros compostos com aportes mensais, prazo e aviso de que não considera tributos ou inflação.
+- Conversor de JSON para CSV, com escaping e arquivo UTF-8 para planilhas.
+
+As quatro ferramentas processam os dados localmente. Novas rotas: /conversor-cores/, /analisador-url/, /juros-compostos/ e /json-csv/.
