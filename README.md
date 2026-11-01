@@ -65,3 +65,7 @@ As quatro ferramentas processam os dados localmente. Novas rotas: /conversor-cor
 
 ## Gerador de QR Code
 Gera QR Codes de texto e URLs no navegador, com tamanhos de 200 a 800 px, seleção de cores, prévia e download em PNG. A biblioteca qrcode 1.5.4 é carregada do jsDelivr; o conteúdo digitado fica local no navegador. Teste escanear o resultado antes de imprimir ou distribuir.
+
+
+## Central de geradores para desenvolvimento
+A rota /geradores-teste/ oferece 16 tipos de dados sintéticos: CPF e CNPJ com dígitos verificadores, números de cartão somente para teste Luhn, senha, RG/CNH/título/inscrição/certidão marcados como fictícios, nomes, empresa fictícia, nick, número, placa de teste, Lorem Ipsum e símbolos. Geração local via Web Crypto. Quantidade limitada a 20 por operação. Os identificadores oficiais são explicitamente para testes e não devem ser usados em cadastros ou transações reais.
