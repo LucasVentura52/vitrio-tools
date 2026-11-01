@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vitrio-kit.wavyowl20.chatgpt.site/sitemap.xml
