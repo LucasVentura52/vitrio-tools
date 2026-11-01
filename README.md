@@ -61,3 +61,7 @@ Após conectar o repositório à Vercel, os commits na branch de produção pode
 - Conversor de JSON para CSV, com escaping e arquivo UTF-8 para planilhas.
 
 As quatro ferramentas processam os dados localmente. Novas rotas: /conversor-cores/, /analisador-url/, /juros-compostos/ e /json-csv/.
+
+
+## Gerador de QR Code
+Gera QR Codes de texto e URLs no navegador, com tamanhos de 200 a 800 px, seleção de cores, prévia e download em PNG. A biblioteca qrcode 1.5.4 é carregada do jsDelivr; o conteúdo digitado fica local no navegador. Teste escanear o resultado antes de imprimir ou distribuir.
