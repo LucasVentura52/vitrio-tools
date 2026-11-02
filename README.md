@@ -85,3 +85,10 @@ Após a aprovação do site no AdSense:
 4. Configure a mensagem de consentimento/CMP para os visitantes nas regiões exigidas pelo Google antes de servir anúncios personalizados.
 
 Não publique espaços com IDs de exemplo. A linha de `ads.txt` também deve ser criada somente com o ID real fornecido pelo AdSense.
+
+## Ferramentas adicionais
+- Calculadora de IMC para adultos, com faixas de referência e orientação informativa.
+- Gerador de slug para URLs com remoção de acentos e separadores configuráveis.
+- Gerador de meta tags SEO com prévia, validação de URL e cópia do HTML.
+
+Rotas: `/calculadora-imc/`, `/gerador-de-slug/` e `/gerador-meta-tags/`. O catálogo agora reúne 32 ferramentas e mantém a busca e a paginação visual em ordem alfabética.
