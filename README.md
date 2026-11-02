@@ -64,7 +64,7 @@ As quatro ferramentas processam os dados localmente. Novas rotas: /conversor-cor
 
 
 ## Gerador de QR Code
-Gera QR Codes de texto e URLs no navegador, com tamanhos de 200 a 800 px, seleção de cores, prévia e download em PNG. A biblioteca qrcode 1.5.4 é carregada do jsDelivr; o conteúdo digitado fica local no navegador. Teste escanear o resultado antes de imprimir ou distribuir.
+Gera QR Codes de texto e URLs no navegador, com tamanhos de 200 a 800 px, seleção de cores, prévia e download em PNG. A biblioteca QRCode.js é incluída localmente no site; o conteúdo digitado fica no navegador. Teste escanear o resultado antes de imprimir ou distribuir.
 
 
 ## Central de geradores para desenvolvimento
@@ -73,3 +73,15 @@ A rota /geradores-teste/ oferece 16 tipos de dados sintéticos: CPF e CNPJ com d
 
 ## SEO de CPF e CNPJ de teste
 As rotas /gerador-cpf/ e /gerador-cnpj/ têm title, descrição e conteúdo próprios para buscas de desenvolvedores. Ambas explicam que os identificadores são dados sintéticos de teste, sem consulta oficial. As rotas também entram no sitemap via prerender.
+
+
+## Preparação para AdSense
+O site contém espaços discretos de anúncio na página inicial e após o conteúdo das ferramentas. Eles ficam ocultos e nenhum script de anúncios é carregado enquanto `enabled` estiver `false` ou não houver um ID de editor válido em `dist/ads-config.js`.
+
+Após a aprovação do site no AdSense:
+1. Copie o ID de editor no formato `ca-pub-XXXXXXXXXXXXXXXX` para `publisherId` em `dist/ads-config.js`.
+2. Crie unidades de anúncio na conta e preencha os IDs numéricos de `slots.home` e `slots.tool` (ou ative os anúncios automáticos na conta).
+3. Defina `enabled: true`, publique e confirme que o site foi aprovado. O prerender coloca a meta de verificação no `<head>` quando encontra um ID válido.
+4. Configure a mensagem de consentimento/CMP para os visitantes nas regiões exigidas pelo Google antes de servir anúncios personalizados.
+
+Não publique espaços com IDs de exemplo. A linha de `ads.txt` também deve ser criada somente com o ID real fornecido pelo AdSense.
