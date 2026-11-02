@@ -69,3 +69,7 @@ Gera QR Codes de texto e URLs no navegador, com tamanhos de 200 a 800 px, seleç
 
 ## Central de geradores para desenvolvimento
 A rota /geradores-teste/ oferece 16 tipos de dados sintéticos: CPF e CNPJ com dígitos verificadores, números de cartão somente para teste Luhn, senha, RG/CNH/título/inscrição/certidão marcados como fictícios, nomes, empresa fictícia, nick, número, placa de teste, Lorem Ipsum e símbolos. Geração local via Web Crypto. Quantidade limitada a 20 por operação. Os identificadores oficiais são explicitamente para testes e não devem ser usados em cadastros ou transações reais.
+
+
+## SEO de CPF e CNPJ de teste
+As rotas /gerador-cpf/ e /gerador-cnpj/ têm title, descrição e conteúdo próprios para buscas de desenvolvedores. Ambas explicam que os identificadores são dados sintéticos de teste, sem consulta oficial. As rotas também entram no sitemap via prerender.
