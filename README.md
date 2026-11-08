@@ -10,9 +10,9 @@ Site estático em português, sem dependências de execução. Sirva a pasta `di
 Edite dist/app.js e dist/style.css. Rode `node --check dist/app.js` e `node prerender.cjs` após alterações no conteúdo. O prerender incorpora o HTML inicial para leitura por mecanismos de busca. Altere a constante base no prerender ao usar um domínio próprio. As páginas individuais preservam seus títulos e descrições.
 
 ## Publicação e monetização
-A implantação inicial é privada. Para atrair visitantes e ser rastreado, o proprietário deve tornar o site público nas configurações do Sites. Pode conectar domínio próprio depois.
+O Vitrio está publicado em https://vitrio-tools.vercel.app/. O catálogo reúne 32 ferramentas gratuitas e o novo [guia prático para vender online](https://vitrio-tools.vercel.app/guia-do-vendedor/), com orientações de preço, taxas, campanhas, imagens e catálogo.
 
-O AdSense está preparado no código, mas desativado (`enabled: false` em `dist/ads-config.js`). O site não carrega o script publicitário enquanto a opção permanece desligada. A configuração contém um publisher ID e `dist/ads.txt` está publicado; confira no painel se o ID corresponde à sua conta e se o site está aprovado.
+O AdSense está preparado no código, mas desativado (`enabled: false` em `dist/ads-config.js`). A tela da conta compartilhada pelo proprietário informa que a conta não foi aprovada, mas não mostra um motivo específico; a causa precisa ser consultada no painel ou no e-mail do Google. O site não carrega o script publicitário enquanto a opção permanece desligada. A configuração contém um publisher ID e `dist/ads.txt` está publicado; confirme no painel se o ID corresponde à conta.
 
 Antes de ativar:
 
