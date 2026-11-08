@@ -10,17 +10,17 @@ Site estático em português, sem dependências de execução. Sirva a pasta `di
 Edite dist/app.js e dist/style.css. Rode `node --check dist/app.js` e `node prerender.cjs` após alterações no conteúdo. O prerender incorpora o HTML inicial para leitura por mecanismos de busca. Altere a constante base no prerender ao usar um domínio próprio. As páginas individuais preservam seus títulos e descrições.
 
 ## Publicação e monetização
-A implantação inicial é privada. Para atrair visitantes e ser rastreado, o proprietário deve tornar o site público nas configurações do Sites. Pode conectar domínio próprio depois.
+O Vitrio está publicado em https://vitrio-tools.vercel.app/. O catálogo reúne 32 ferramentas gratuitas e o novo [guia prático para vender online](https://vitrio-tools.vercel.app/guia-do-vendedor/), com orientações de preço, taxas, campanhas, imagens e catálogo.
 
-Não há anúncios, analytics nem cookies publicitários nesta versão. Não foi cadastrada conta AdSense ou solicitado aprovação. Antes de ativar anúncios:
-1. Defina domínio, identidade do responsável e um canal real de contato; inclua esse contato em Sobre e Privacidade.
-2. Revise os requisitos oficiais vigentes do AdSense e a política de privacidade com os fornecedores que serão usados.
-3. Configure escolhas e consentimento aplicáveis antes de carregar publicidade.
-4. Use seus IDs reais de editor e unidade. Reserve espaço longe de controles de download e resultados. Não invente publisher IDs.
-5. Adicione o ads.txt fornecido pela sua conta quando necessário. Não existe ads.txt fictício.
-6. Envie o sitemap para sua propriedade verificada no Search Console. Não há garantia de indexação ou aprovação.
+O AdSense está preparado no código, mas desativado (`enabled: false` em `dist/ads-config.js`). A tela da conta compartilhada pelo proprietário informa que a conta não foi aprovada, mas não mostra um motivo específico; a causa precisa ser consultada no painel ou no e-mail do Google. O site não carrega o script publicitário enquanto a opção permanece desligada. A configuração contém um publisher ID e `dist/ads.txt` está publicado; confirme no painel se o ID corresponde à conta.
 
-A pasta dist pode ser publicada sem compilar. .openai/hosting.json identifica a implantação Sites. O repositório contém todo o código-fonte e o README.
+Antes de ativar:
+
+1. Adicione o site no AdSense e solicite a revisão. O Google só libera anúncios quando o status do site estiver como **Pronto**.
+2. Ative Anúncios automáticos no painel do AdSense ou, para blocos manuais, crie as unidades e preencha os IDs em `slots.home` e `slots.tool`.
+3. Configure as mensagens de consentimento aplicáveis ao seu público. Para anúncios personalizados no EEE, Reino Unido e Suíça, o Google exige uma CMP certificada integrada ao TCF.
+4. Revise a política de privacidade e informe um canal de contato real.
+5. Só então altere `enabled` para `true` e publique.
 
 ## Verificação
 `node --check dist/app.js`. Navegação e cálculo inicial conferidos no navegador. Exportação de imagens exige arquivo real e navegador com suporte a Canvas; os formatos não suportados podem retornar PNG, cuja extensão é detectada na exportação.
@@ -75,17 +75,10 @@ A rota /geradores-teste/ oferece 16 tipos de dados sintéticos: CPF e CNPJ com d
 As rotas /gerador-cpf/ e /gerador-cnpj/ têm title, descrição e conteúdo próprios para buscas de desenvolvedores. Ambas explicam que os identificadores são dados sintéticos de teste, sem consulta oficial. As rotas também entram no sitemap via prerender.
 
 
-## Preparação para AdSense
-O site contém espaços discretos de anúncio na página inicial e após o conteúdo das ferramentas. Eles ficam ocultos e nenhum script de anúncios é carregado enquanto `enabled` estiver `false` ou não houver um ID de editor válido em `dist/ads-config.js`.
+## Integração técnica do AdSense
+A página de configuração fica em `dist/ads-config.js`. Quando `enabled` está desligado, nenhum script publicitário é carregado. Quando estiver ligado com um ID válido, o prerender inclui o código do AdSense no `<head>` de todas as páginas; `dist/ads.js` reaproveita esse carregador e cria blocos manuais quando `slots.home` ou `slots.tool` contêm IDs numéricos. Anúncios automáticos não precisam desses IDs de bloco.
 
-Após a aprovação do site no AdSense:
-1. Copie o ID de editor no formato `ca-pub-XXXXXXXXXXXXXXXX` para `publisherId` em `dist/ads-config.js`.
-2. Crie unidades de anúncio na conta e preencha os IDs numéricos de `slots.home` e `slots.tool` (ou ative os anúncios automáticos na conta).
-3. Defina `enabled: true`, publique e confirme que o site foi aprovado. O prerender coloca a meta de verificação no `<head>` quando encontra um ID válido.
-4. Configure a mensagem de consentimento/CMP para os visitantes nas regiões exigidas pelo Google antes de servir anúncios personalizados.
-
-Não publique espaços com IDs de exemplo. A linha de `ads.txt` também deve ser criada somente com o ID real fornecido pelo AdSense.
-
+A aprovação do site, a ativação de Anúncios automáticos e a CMP são configuradas na conta do AdSense; o repositório não consegue confirmar esses estados.
 ## Ferramentas adicionais
 - Calculadora de IMC para adultos, com faixas de referência e orientação informativa.
 - Gerador de slug para URLs com remoção de acentos e separadores configuráveis.
