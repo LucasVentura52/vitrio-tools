@@ -12,15 +12,9 @@ Edite dist/app.js e dist/style.css. Rode `node --check dist/app.js` e `node prer
 ## Publicação e monetização
 O Vitrio está publicado em https://vitrio-tools.vercel.app/. O catálogo reúne 32 ferramentas gratuitas e o novo [guia prático para vender online](https://vitrio-tools.vercel.app/guia-do-vendedor/), com orientações de preço, taxas, campanhas, imagens e catálogo.
 
-O AdSense está preparado no código, mas desativado (`enabled: false` em `dist/ads-config.js`). A tela da conta compartilhada pelo proprietário informa que a conta não foi aprovada, mas não mostra um motivo específico; a causa precisa ser consultada no painel ou no e-mail do Google. O site não carrega o script publicitário enquanto a opção permanece desligada. A configuração contém um publisher ID e `dist/ads.txt` está publicado; confirme no painel se o ID corresponde à conta.
+O AdSense está ativado em `dist/ads-config.js` com o publisher ID `ca-pub-9550700715534539`. O build insere o script no `<head>` e publica `/ads.txt` com o mesmo ID.
 
-Antes de ativar:
-
-1. Adicione o site no AdSense e solicite a revisão. O Google só libera anúncios quando o status do site estiver como **Pronto**.
-2. Ative Anúncios automáticos no painel do AdSense ou, para blocos manuais, crie as unidades e preencha os IDs em `slots.home` e `slots.tool`.
-3. Configure as mensagens de consentimento aplicáveis ao seu público. Para anúncios personalizados no EEE, Reino Unido e Suíça, o Google exige uma CMP certificada integrada ao TCF.
-4. Revise a política de privacidade e informe um canal de contato real.
-5. Só então altere `enabled` para `true` e publique.
+A configuração usa Anúncios automáticos. No painel do AdSense, confirme que o site está com status **Pronto**, ative **Anúncios automáticos** para o domínio e configure as mensagens de consentimento aplicáveis em **Privacidade e mensagens**. Para usar blocos manuais, crie as unidades no AdSense e preencha `slots.home` e `slots.tool`.
 
 ## Verificação
 `node --check dist/app.js`. Navegação e cálculo inicial conferidos no navegador. Exportação de imagens exige arquivo real e navegador com suporte a Canvas; os formatos não suportados podem retornar PNG, cuja extensão é detectada na exportação.
